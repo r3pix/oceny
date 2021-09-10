@@ -16,8 +16,10 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using oceny5._0.Authorization;
 using oceny5._0.Models;
 
 namespace oceny5._0
@@ -70,10 +72,14 @@ namespace oceny5._0
 
             services.AddScoped<IGrupaService, GrupaService>();
             services.AddScoped<IOcenyService, OcenyService>();
+            services.AddScoped<IUserContextService,UserContextService>();
             services.AddScoped<IWykladowcaService, WykladowcaService>();
             services.AddScoped<ErrorHandlingMiddleware>();
             services.AddScoped<RequestTimeMiddleware>();
             services.AddScoped<IValidator<CreateWykladowcaDto>,CreateWykladowcaDtoValidator>();
+            services.AddHttpContextAccessor();
+
+            services.AddScoped<IAuthorizationHandler,ManageOcenaRequirementHandler>();
 
             services.AddSwaggerGen();
 
@@ -111,7 +117,7 @@ namespace oceny5._0
 
             app.UseRouting();
 
-           // app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

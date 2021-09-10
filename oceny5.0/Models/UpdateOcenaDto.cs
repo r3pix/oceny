@@ -11,7 +11,6 @@ namespace oceny5._0.Models
         [Required]
         [Range(2,5,ErrorMessage ="Ocena musi byc od 2 do 5")]
         public int Ocena1 { get; set; }
-        public int WykladowcaId { get; set; }
 
 
     }

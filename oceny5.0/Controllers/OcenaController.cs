@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 //dodawanie zalacznika (plik) swiadectwo, (swagger) 
 
@@ -13,6 +15,7 @@ namespace oceny5._0.Controllers
 {
     [Route("api/oceny")]
     [ApiController]
+    [Authorize]
     public class OcenaController : ControllerBase
     {
 
@@ -23,28 +26,29 @@ namespace oceny5._0.Controllers
             _service = service;
         }
 
+
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Wykladowca,Admin")]
         public async Task<ActionResult> Delete([FromRoute] int id)
         {
             await _service.Delete(id);
             return Ok();
         }
 
+        
         [HttpPut("{id}")]
+        [Authorize(Roles = "Wykladowca,Admin")]
         public async Task<ActionResult> Update([FromBody]UpdateOcenaDto dto, [FromRoute]int id)
         {
-            /*
-            if(!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }*/
+           
             await _service.Update(id, dto);
             return Ok();
 
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreateOcena([FromBody] CreateOcenaDto ocenaa )
+        [Authorize(Roles = "Wykladowca,Admin")]
+        public async Task<ActionResult> CreateOcena([FromBody] CreateOcenaDto ocenaa)
         {
             var ocena = await _service.CreateOcena(ocenaa);
             return Created($"/api/testocen/{ocena}",null);
@@ -52,6 +56,7 @@ namespace oceny5._0.Controllers
 
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<OcenaDto>>> GetAll()
         {
 
@@ -59,11 +64,15 @@ namespace oceny5._0.Controllers
             return Ok(oceny);
         }
 
+        
         [HttpGet("{id}")]
-        public async Task<ActionResult<OcenaDto> >Get([FromRoute]int id)
+        [AllowAnonymous]
+        public async Task<ActionResult<OcenaDto>>Get([FromRoute]int id)
         {
             var ocena = await _service.GetById(id);
             return ocena;
         }
+
+
     }
 }

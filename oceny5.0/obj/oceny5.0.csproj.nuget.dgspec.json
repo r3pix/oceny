@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\Desktop\\kopia backend\\oceny5.0\\oceny5.0\\oceny5.0.csproj": {}
+    "C:\\Users\\admin\\Desktop\\kopia backend\\tak\\oceny5.0\\oceny5.0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\Desktop\\kopia backend\\oceny5.0\\oceny5.0\\oceny5.0.csproj": {
+    "C:\\Users\\admin\\Desktop\\kopia backend\\tak\\oceny5.0\\oceny5.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Desktop\\kopia backend\\oceny5.0\\oceny5.0\\oceny5.0.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Desktop\\kopia backend\\tak\\oceny5.0\\oceny5.0.csproj",
         "projectName": "oceny5.0",
-        "projectPath": "C:\\Users\\admin\\Desktop\\kopia backend\\oceny5.0\\oceny5.0\\oceny5.0.csproj",
+        "projectPath": "C:\\Users\\admin\\Desktop\\kopia backend\\tak\\oceny5.0\\oceny5.0.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Desktop\\kopia backend\\oceny5.0\\oceny5.0\\obj\\",
+        "outputPath": "C:\\Users\\admin\\Desktop\\kopia backend\\tak\\oceny5.0\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

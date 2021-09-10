@@ -16,7 +16,6 @@ namespace oceny5._0
             CreateMap<CreateOcenaDto, Ocena>()
                 .ForMember(c => c.Ocena1, m => m.MapFrom(d => d.Ocena1))
                 .ForMember(c => c.PrzedmiotId, m => m.MapFrom(d => d.PrzedmiotId))
-                .ForMember(c => c.WykladowcaId, m => m.MapFrom(d => d.WykladowcaId))
                 .ForMember(c => c.StudentId, m => m.MapFrom(d => d.StudentId));
 
             CreateMap<Ocena, OcenaDto>()

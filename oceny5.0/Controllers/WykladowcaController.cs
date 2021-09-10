@@ -19,7 +19,7 @@ namespace oceny5._0.Controllers
             _wykladowcaService = wykladowcaService;
         }
 
-        [HttpPost]
+        [HttpPost("register")]
         public async Task<ActionResult> Create(CreateWykladowcaDto dto)
         {
             var result = await _wykladowcaService.Create(dto);

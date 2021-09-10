@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fh2hh3a+e1DdXLNnjv+E98NYlZAJpFnJqQzYce/v2nzEQy5Pu4rQGIf344IU69j0IXiepL32n7MppOGW/qdmBA==",
+  "dgSpecHash": "nPUttm7INWO3Hhic/+UcDBwj07K3tBzr+asVQIBwTWtB3xHA/DiQQGaq+73hICw9WG0Ju76l0JhJ+AiiNvzBUA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin\\Desktop\\kopia backend\\oceny5.0\\oceny5.0\\oceny5.0.csproj",
+  "projectFilePath": "C:\\Users\\admin\\Desktop\\kopia backend\\tak\\oceny5.0\\oceny5.0.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

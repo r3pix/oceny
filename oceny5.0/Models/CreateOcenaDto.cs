@@ -10,7 +10,6 @@ namespace oceny5._0.Models
     {
         public int Ocena1 { get; set; }
         public int PrzedmiotId { get; set; }
-        public int WykladowcaId { get; set; }
         public int StudentId { get; set; }
 
     }
