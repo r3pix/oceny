@@ -73,6 +73,12 @@ namespace oceny5._0.Controllers
             return ocena;
         }
 
-
+        [HttpGet("student")]
+        [Authorize(Roles = "Student")]
+        public async Task<ActionResult<IEnumerable<OcenaDto>>> GetStudentOceny()
+        {
+            var oceny = await _service.GetStudentOceny();
+            return Ok(oceny);
+        }
     }
 }

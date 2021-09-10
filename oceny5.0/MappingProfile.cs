@@ -36,6 +36,14 @@ namespace oceny5._0
                 .ForMember(x => x.Imie, m => m.MapFrom(c => c.Imie))
                 .ForMember(x => x.Nazwisko, m => m.MapFrom(c => c.Nazwisko))
                 .ForMember(x => x.Stopien, m => m.MapFrom(c => c.Stopien));
+
+            CreateMap<CreateStudentDto,Student>()
+                .ForMember(x=>x.Email, m=>m.MapFrom(c=>c.Email))
+                .ForMember(x=>x.GrupaId,m=>m.MapFrom(c=>c.GrupaId))
+                .ForMember(x=>x.Imie, m=>m.MapFrom(c=>c.Imie))
+                .ForMember(x=>x.Nazwisko, m=>m.MapFrom(c=>c.Nazwisko));
+                
+
         }
     }
 }

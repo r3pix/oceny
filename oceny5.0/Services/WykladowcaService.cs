@@ -41,7 +41,7 @@ namespace oceny5._0.Services
             var wykladowca = _mapper.Map<Wykladowca>(dto);
             wykladowca.HashedPassword = _passwordHasher.HashPassword(wykladowca, dto.Password);
 
-            _context.Add(wykladowca);
+            _context.Wykladowcy.Add(wykladowca);
             await _context.SaveChangesAsync();
             return wykladowca.Id;
 

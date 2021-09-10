@@ -106,6 +106,13 @@ namespace oceny5._0.Services
             
         }
 
+        public async Task<IEnumerable<OcenaDto>> GetStudentOceny()
+        {
+            
+            var oceny = await _context.Oceny.Where(x => x.StudentId == _userContextService.GetUserId).ToListAsync();
+            var ocenyy = _mapper.Map<List<OcenaDto>>(oceny);
+            return ocenyy;
 
+        }
     }
 }

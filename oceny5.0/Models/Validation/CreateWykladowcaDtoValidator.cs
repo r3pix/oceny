@@ -10,11 +10,11 @@ namespace oceny5._0.Models
 {
     public class CreateWykladowcaDtoValidator : AbstractValidator<CreateWykladowcaDto>
     {
-        private readonly OcenyDBContext _dbContext;
+        
 
         public CreateWykladowcaDtoValidator(OcenyDBContext dbContext)
         {
-            _dbContext = dbContext;
+            
             RuleFor(c => c.Email)
                 .NotEmpty()
                 .EmailAddress();
@@ -27,7 +27,7 @@ namespace oceny5._0.Models
             RuleFor(x => x.Email)
                 .Custom((value, context) =>
                     {
-                        if (_dbContext.Wykladowcy.Any(d => d.Email == value))
+                        if (dbContext.Wykladowcy.Any(d => d.Email == value))
                         {
                             context.AddFailure("This email is already in use for entity wykladowcy");
                         }

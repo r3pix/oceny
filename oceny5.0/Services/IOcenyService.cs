@@ -13,5 +13,6 @@ namespace oceny5._0.Services
         Task<OcenaDto> GetById(int id);
         Task Delete(int id);
         Task Update(int id, UpdateOcenaDto dto);
+        Task<IEnumerable<OcenaDto>> GetStudentOceny();
     }
 }

@@ -21,6 +21,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using oceny5._0.Authorization;
 using oceny5._0.Models;
+using oceny5._0.Models.Validation;
 
 namespace oceny5._0
 {
@@ -74,9 +75,11 @@ namespace oceny5._0
             services.AddScoped<IOcenyService, OcenyService>();
             services.AddScoped<IUserContextService,UserContextService>();
             services.AddScoped<IWykladowcaService, WykladowcaService>();
+            services.AddScoped<IStudentService,StudentService>();
             services.AddScoped<ErrorHandlingMiddleware>();
             services.AddScoped<RequestTimeMiddleware>();
             services.AddScoped<IValidator<CreateWykladowcaDto>,CreateWykladowcaDtoValidator>();
+            services.AddScoped<IValidator<CreateStudentDto>, CreateStudentDtoValidator>();
             services.AddHttpContextAccessor();
 
             services.AddScoped<IAuthorizationHandler,ManageOcenaRequirementHandler>();
@@ -84,6 +87,7 @@ namespace oceny5._0
             services.AddSwaggerGen();
 
             services.AddScoped<IPasswordHasher<Wykladowca>, PasswordHasher<Wykladowca>>();
+            services.AddScoped<IPasswordHasher<Student>,PasswordHasher<Student>>();
 
             services.AddAutoMapper(this.GetType().Assembly);
         }
