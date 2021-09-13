@@ -42,7 +42,13 @@ namespace oceny5._0
                 .ForMember(x=>x.GrupaId,m=>m.MapFrom(c=>c.GrupaId))
                 .ForMember(x=>x.Imie, m=>m.MapFrom(c=>c.Imie))
                 .ForMember(x=>x.Nazwisko, m=>m.MapFrom(c=>c.Nazwisko));
-                
+
+            CreateMap<CreatePrzedmiotDto, Przedmiot>()
+                .ForMember(x => x.Nazwa, m => m.MapFrom(c => c.Nazwa));
+
+            CreateMap<Przedmiot, PrzedmiotDto>()
+                .ForMember(x => x.Nazwa, m => m.MapFrom(c => c.Nazwa));
+
 
         }
     }

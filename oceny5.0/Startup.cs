@@ -76,10 +76,13 @@ namespace oceny5._0
             services.AddScoped<IUserContextService,UserContextService>();
             services.AddScoped<IWykladowcaService, WykladowcaService>();
             services.AddScoped<IStudentService,StudentService>();
+            services.AddScoped<IPrzedmiotService, PrzedmiotService>();
+
             services.AddScoped<ErrorHandlingMiddleware>();
             services.AddScoped<RequestTimeMiddleware>();
             services.AddScoped<IValidator<CreateWykladowcaDto>,CreateWykladowcaDtoValidator>();
             services.AddScoped<IValidator<CreateStudentDto>, CreateStudentDtoValidator>();
+            services.AddScoped<IValidator<CreatePrzedmiotDto>,CreatePrzedmiotDtoValidator>();
             services.AddHttpContextAccessor();
 
             services.AddScoped<IAuthorizationHandler,ManageOcenaRequirementHandler>();
