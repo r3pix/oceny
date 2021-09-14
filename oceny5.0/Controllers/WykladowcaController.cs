@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using oceny5._0.Models;
 using oceny5._0.Services;
@@ -19,7 +21,9 @@ namespace oceny5._0.Controllers
             _wykladowcaService = wykladowcaService;
         }
 
+
         [HttpPost("register")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> Create(CreateWykladowcaDto dto)
         {
             var result = await _wykladowcaService.Create(dto);

@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using oceny5._0.Entities;
 
 namespace oceny5._0.Migrations
 {
     [DbContext(typeof(OcenyDBContext))]
-    partial class OcenyDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210914064817_admin-role-added")]
+    partial class adminroleadded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

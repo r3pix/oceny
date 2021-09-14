@@ -16,6 +16,7 @@ namespace oceny5._0.Entities
         public DbSet<Przedmiot> Przedmioty { get; set; }
         public DbSet<Student> Studenci { get; set; }
         public DbSet<Wykladowca> Wykladowcy { get; set; }
+        public DbSet<Admin> Admins { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

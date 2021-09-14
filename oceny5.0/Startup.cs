@@ -77,12 +77,15 @@ namespace oceny5._0
             services.AddScoped<IWykladowcaService, WykladowcaService>();
             services.AddScoped<IStudentService,StudentService>();
             services.AddScoped<IPrzedmiotService, PrzedmiotService>();
+            services.AddScoped<IAdminService,AdminService>();
+
 
             services.AddScoped<ErrorHandlingMiddleware>();
             services.AddScoped<RequestTimeMiddleware>();
             services.AddScoped<IValidator<CreateWykladowcaDto>,CreateWykladowcaDtoValidator>();
             services.AddScoped<IValidator<CreateStudentDto>, CreateStudentDtoValidator>();
             services.AddScoped<IValidator<CreatePrzedmiotDto>,CreatePrzedmiotDtoValidator>();
+            services.AddScoped<IValidator<CreateAdminDto>, CreateAdminDtoValidator>();
             services.AddHttpContextAccessor();
 
             services.AddScoped<IAuthorizationHandler,ManageOcenaRequirementHandler>();
@@ -91,6 +94,7 @@ namespace oceny5._0
 
             services.AddScoped<IPasswordHasher<Wykladowca>, PasswordHasher<Wykladowca>>();
             services.AddScoped<IPasswordHasher<Student>,PasswordHasher<Student>>();
+            services.AddScoped<IPasswordHasher<Admin>,PasswordHasher<Admin>>();
 
             services.AddAutoMapper(this.GetType().Assembly);
         }
